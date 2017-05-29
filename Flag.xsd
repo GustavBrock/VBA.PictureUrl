@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataroot xmlns:od="urn:schemas-microsoft-com:officedata" generated="2017-05-29T15:28:37">
+<Flag>
+<Id>1</Id>
+<Country>Mauritius</Country>
+<Url>#http://www.flags.net/images/largeflags/MRTS0001.GIF#</Url>
+</Flag>
+<Flag>
+<Id>2</Id>
+<Country>Qatar</Country>
+<Url>#http://www.flags.net/images/largeflags/QATA0001.GIF#</Url>
+</Flag>
+<Flag>
+<Id>3</Id>
+<Country>New Zealand</Country>
+<Url>#http://www.flags.net/images/largeflags/NWZE0001.GIF#</Url>
+</Flag>
+<Flag>
+<Id>4</Id>
+<Country>Vanuatu</Country>
+<Url>#http://www.flags.net/images/largeflags/VANT0001.GIF#</Url>
+</Flag>
+<Flag>
+<Id>5</Id>
+<Country>Ukraine</Country>
+<Url>#http://www.flags.net/images/largeflags/UKRN0001.GIF#</Url>
+</Flag>
+<Flag>
+<Id>6</Id>
+<Country>Papua New Guinea</Country>
+<Url>#http://www.flags.net/images/largeflags/PANG0001.GIF#</Url>
+</Flag>
+<Flag>
+<Id>7</Id>
+<Country>Denmark</Country>
+<Url>#http://www.flags.net/images/largeflags/DENM0001.GIF#</Url>
+</Flag>
+<Flag>
+<Id>8</Id>
+<Country>Egypt</Country>
+<Url>#http://www.flags.net/images/largeflags/EGYP0001.GIF#</Url>
+</Flag>
+<Flag>
+<Id>9</Id>
+<Country>Argentina</Country>
+<Url>#http://www.flags.net/images/largeflags/ARGE0001.GIF#</Url>
+</Flag>
+<Flag>
+<Id>10</Id>
+<Country>Turkmenistan</Country>
+<Url>#http://www.flags.net/images/largeflags/TKST0001.GIF#</Url>
+</Flag>
+</dataroot>
