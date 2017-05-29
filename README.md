@@ -5,4 +5,5 @@ Traditionally, the method to display pictures in Access forms and reports is fir
 But why not let Windows retrieve the pictures automatically from the URLs? 
 
 Full documentation can be found here: 
+
 https://www.experts-exchange.com/articles/29679/Show-pictures-directly-from-URLs-in-Access-forms-and-reports.html
