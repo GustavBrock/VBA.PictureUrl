@@ -22,6 +22,9 @@ Private Declare Function URLDownloadToCacheFile Lib "Urlmon" Alias "URLDownloadT
 ' Download a file or a page with public access from the web.
 ' Returns 0 if success, error code if not.
 '
+' If parameter NoOverwrite is True, no download will be attempted 
+' if an existing local file exists, thus this will not be overwritten.
+'
 ' Examples:
 '
 ' Download a file:
@@ -41,10 +44,12 @@ Private Declare Function URLDownloadToCacheFile Lib "Urlmon" Alias "URLDownloadT
 '
 ' 2004-12-17. Gustav Brock, Cactus Data ApS, CPH.
 ' 2017-05-25. Gustav Brock, Cactus Data ApS, CPH. Added check for local file.
+' 2017-06-05. Gustav Brock, Cactus Data ApS, CPH. Added option to no overwrite the local file.
 '
 Public Function DownloadFile( _
     ByVal Url As String, _
-    ByVal LocalFileName As String) _
+    ByVal LocalFileName As String, _
+    Optional ByVal NoOverwrite As Boolean) _
     As Long
     
     Const BindFDefault  As Long = 0
@@ -52,6 +57,15 @@ Public Function DownloadFile( _
     Const ErrorNotFound As Long = -1
 
     Dim Result  As Long
+
+    If NoOverwrite = True Then
+        ' Page or file should not be overwritten.
+        ' Check that the local file exists.
+        If Dir(LocalFileName, vbNormal) <> "" Then
+            ' File exists. Don't proceed.
+            Exit Function
+        End If
+    End If
       
     ' Download file or page.
     ' Return success or error code.
