@@ -1,28 +1,48 @@
+Attribute VB_Name = "Internet"
 Option Compare Database
 Option Explicit
 
-Private Declare Function URLDownloadToFile Lib "Urlmon" Alias "URLDownloadToFileA" ( _
-    ByVal pCaller As Long, _
-    ByVal szURL As String, _
-    ByVal szFileName As String, _
-    ByVal dwReserved As Long, _
-    ByVal lpfnCB As Long) _
-    As Long
-
-Private Declare Function URLDownloadToCacheFile Lib "Urlmon" Alias "URLDownloadToCacheFileA" ( _
-    ByVal pCaller As Long, _
-    ByVal szURL As String, _
-    ByVal szFileName As String, _
-    ByVal cchFileName As Long, _
-    ByVal dwReserved As Long, _
-    ByVal lpfnCB As Long) _
-    As Long
+#If VBA7 Then
+    Private Declare PtrSafe Function URLDownloadToFile Lib "Urlmon" Alias "URLDownloadToFileA" ( _
+        ByVal pCaller As Long, _
+        ByVal szURL As String, _
+        ByVal szFileName As String, _
+        ByVal dwReserved As Long, _
+        ByVal lpfnCB As LongPtr) _
+        As Long
+    
+    Private Declare PtrSafe Function URLDownloadToCacheFile Lib "Urlmon" Alias "URLDownloadToCacheFileA" ( _
+        ByVal pCaller As Long, _
+        ByVal szURL As String, _
+        ByVal szFileName As String, _
+        ByVal cchFileName As Long, _
+        ByVal dwReserved As Long, _
+        ByVal lpfnCB As LongPtr) _
+        As Long
+#Else
+    Private Declare Function URLDownloadToFile Lib "Urlmon" Alias "URLDownloadToFileA" ( _
+        ByVal pCaller As Long, _
+        ByVal szURL As String, _
+        ByVal szFileName As String, _
+        ByVal dwReserved As Long, _
+        ByVal lpfnCB As Long) _
+        As Long
+    
+    Private Declare Function URLDownloadToCacheFile Lib "Urlmon" Alias "URLDownloadToCacheFileA" ( _
+        ByVal pCaller As Long, _
+        ByVal szURL As String, _
+        ByVal szFileName As String, _
+        ByVal cchFileName As Long, _
+        ByVal dwReserved As Long, _
+        ByVal lpfnCB As Long) _
+        As Long
+#End If
 '
 
 ' Download a file or a page with public access from the web.
 ' Returns 0 if success, error code if not.
 '
-' If parameter NoOverwrite is True, no download will be attempted 
+' If parameter NoOverwrite is True, no download will be attempted
 ' if an existing local file exists, thus this will not be overwritten.
 '
 ' Examples:

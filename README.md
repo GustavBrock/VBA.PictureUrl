@@ -7,3 +7,5 @@ But why not let Windows retrieve the pictures automatically from the URLs?
 Full documentation can be found here: 
 
 https://www.experts-exchange.com/articles/29679/Show-pictures-directly-from-URLs-in-Access-forms-and-reports.html
+
+Updated with API declarations for both 32- and 64-bit.
